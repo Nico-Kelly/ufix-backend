@@ -11,3 +11,17 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+enum UserRole {
+CLIENTE 
+TECNICO
+ADMIN }
+
+enum ServiceStatus {
+PENDIENTE
+ACEPTADA 
+EN_PROGRESO 
+COMPLETADA 
+RECHAZADA 
+CANCELADA
+}
