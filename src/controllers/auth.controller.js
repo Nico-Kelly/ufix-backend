@@ -23,6 +23,15 @@ exports.register = async(req, res) => {
         }
 
         const hashedPassword = await bcrypt.hash(password, 12);
+
+
+        const token = jwt.sign(
+            {
+                userId: user.id,
+                role: user.role
+            }, process.env.JWT_SECRET,
+            {expiresIn: '7d'}
+        );
     } catch (error) {
 
     }
