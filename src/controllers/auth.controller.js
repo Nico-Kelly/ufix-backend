@@ -21,6 +21,8 @@ exports.register = async(req, res) => {
         if (existing) {
             return res.status(409).json({error: 'El email ya está registrado'});
         }
+
+        const hashedPassword = await bcrypt.hash(password, 12);
     } catch (error) {
 
     }
