@@ -6,8 +6,12 @@ const prisma = new PrismaClient();
 
 exports.register = async(req, res) => {
     try{
+        const {email, password, name, role, phone } = req.body;
 
+        if(!email || !password || !name || !role) {
+            return res.status(400).json({error: 'Todos los campos son requeridos'});
+        }
     } catch (error) {
-
+        
     }
 }
