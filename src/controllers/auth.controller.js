@@ -11,6 +11,10 @@ exports.register = async(req, res) => {
         if(!email || !password || !name || !role) {
             return res.status(400).json({error: 'Todos los campos son requeridos'});
         }
+
+        if (password.length < 8) {
+            return res.status(400).json({error: 'La contraseña debe tener almenos 8 caracteres'});
+        }
     } catch (error) {
         
     }
