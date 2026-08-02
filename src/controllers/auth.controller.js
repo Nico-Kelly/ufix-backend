@@ -34,8 +34,8 @@ exports.register = async(req, res) => {
         );
 
         res.status(201).json({user, token});
-        
-    } catch (error) {
 
+    } catch (error) {
+        res.status(500).json({error: 'Error interno del servidor'});
     }
 }
